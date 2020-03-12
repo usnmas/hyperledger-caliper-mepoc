@@ -9,3 +9,8 @@
 - 1 org / 2 peer / 4 couchDB / solo algorithm / Endorsement Policy OR
 - 1 org / 1 peer / 4 couchDB / solo algorithm / Endorsement Policy OR
 - 1 org / 4 peer / 4 levelDB / solo algorithm / Endorsement Policy OR
+
+## Usages
+
+- After clone the repository and before execute the script, crypto materials should be generated and all the directory information should be adjusted. 
+
