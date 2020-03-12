@@ -1,0 +1,33 @@
+---
+test:
+    name: PoC of ECS VUW
+    description: Performance Measurement of PoC System for ME ECS VUW 
+    clients:
+        type: local
+        number: 1
+    rounds:
+    - label: Set Data
+      description: Test for the initial data setting performance of the deployed chaincode
+      txNumber:
+      - 100
+      rateControl:
+      - type: fixed-rate
+        opts:
+          tps: 100
+      callback: poc/setDevice.js
+    - label: Query
+      description: Test for the query performance of the deployed chaincode
+      txNumber:
+      - 100
+      rateControl:
+      - type: fixed-rate
+        opts:
+          tps: 100
+      callback: poc/query.js
+monitor:
+    type:
+    - docker
+    docker:
+      name:
+      - all
+    interval: 1
