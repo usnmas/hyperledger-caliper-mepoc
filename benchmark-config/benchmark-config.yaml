@@ -5,25 +5,38 @@ test:
     clients:
         type: local
         number: 1
+        #number: 10
     rounds:
-    - label: Set Data
-      description: Test for the initial data setting performance of the deployed chaincode
+    - label: Device Register
+      description: Test for the initial data setting performance
       txNumber:
-      - 100
+      - 250
       rateControl:
       - type: fixed-rate
         opts:
-          tps: 100
+          #tps: 100
+          tps: 250
       callback: poc/setDevice.js
     - label: Query
-      description: Test for the query performance of the deployed chaincode
+      description: Test for the query performance
       txNumber:
-      - 100
+      - 250
       rateControl:
       - type: fixed-rate
         opts:
-          tps: 100
+          #tps: 100
+          tps: 250
       callback: poc/query.js
+    - label: Update Status
+      description: Test for the actuator status update performance
+      txNumber:
+      - 250
+      rateControl:
+      - type: fixed-rate
+        opts:
+          #tps: 100
+          tps: 250
+      callback: poc/update.js
 monitor:
     type:
     - docker
